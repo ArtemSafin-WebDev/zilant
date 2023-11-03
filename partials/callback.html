@@ -1,0 +1,105 @@
+<div class="callback">
+    <div class="callback__inner">
+
+        <form action="/" method="POST" class="callback__form js-callback-form">
+            <div class="callback__form-content">
+                <h3 class="callback__heading">
+                    Привет! Расскажите коротко о вашей задаче
+                </h3>
+                <div class="callback__fields">
+                    <div class="callback__field">
+                        <label class="callback__label">
+                            <input type="text" class="callback__input" name="your-name" required="" placeholder="Имя">
+                            <span class="callback__label-text">
+                                Имя
+                            </span>
+                        </label>
+                    </div>
+                    <div class="callback__field">
+                        <label class="callback__label">
+                            <input type="text" class="callback__input" name="your-company" required=""
+                                placeholder="Компания">
+                            <span class="callback__label-text">
+                                Компания
+                            </span>
+                        </label>
+                    </div>
+                    <div class="callback__field">
+                        <label class="callback__label">
+                            <input type="tel" class="callback__input" name="your-phone" required=""
+                                placeholder="Телефон">
+                            <span class="callback__label-text">
+                                Телефон
+                            </span>
+                        </label>
+                    </div>
+                    <div class="callback__field">
+                        <label class="callback__label">
+                            <input type="email" class="callback__input" name="your-email" required=""
+                                placeholder="E-mail">
+                            <span class="callback__label-text">
+                                E-mail
+                            </span>
+                        </label>
+                    </div>
+                    <div class="callback__field callback__field--fullwidth">
+                        <label class="callback__file-upload js-file-upload">
+                            <input type="file" class="callback__file-upload-input">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#file"></use>
+                            </svg>
+                            <span class="callback__file-upload-text js-file-upload-text">
+                                Прикрепить файл
+                            </span>
+                        </label>
+                    </div>
+                    <div class="callback__field callback__field--fullwidth">
+                        <label class="callback__label">
+                            <textarea name="your-comment" class="callback__input"
+                                placeholder="Описание задачи"></textarea>
+                            <span class="callback__label-text">
+                                Описание задачи
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="callback__policy">
+                    <label class="callback__policy-checkbox">
+                        <input type="checkbox" class="callback__policy-checkbox-input" name="policy" value="1"
+                            required="">
+                        <span class="callback__policy-checkbox-mark">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#checkmark"></use>
+                            </svg>
+                        </span>
+                        <span class="callback__policy-checkbox-text">
+                            Я согласен с <a href="#">правилами обработки персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <button class="callback__submit" type="submit">
+                    Отправить
+                </button>
+            </div>
+            <div class="callback__form-success">
+                <h3 class="callback__form-success-heading">
+                    Спасибо за заявку!
+                </h3>
+                <div class="callback__form-success-text">
+                    Письмо с заявкой отправлено и мы его получили. Свяжемся с Вами в ближайшее время.
+                </div>
+                <a class="callback__form-success-btn" href="#">
+                    На главную
+                </a>
+            </div>
+            <div class="callback__form-error">
+                <h3 class="callback__form-error-heading">
+                    Произошла ошибка
+                </h3>
+                <button class="callback__form-error-btn" type="button">
+                    Попробовать снова
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

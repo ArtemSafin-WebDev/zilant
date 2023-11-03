@@ -1,0 +1,9 @@
+:root {
+  --onest: "Onest", sans-serif;
+  --content-padding: 5rem;
+  --container-width: 150rem;
+
+  @include breakpoint(mobile) {
+    --content-padding: 2.2rem;
+  }
+}

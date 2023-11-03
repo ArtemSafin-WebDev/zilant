@@ -1,0 +1,317 @@
+.project-category {
+  @include blockWrapper;
+  margin-bottom: 25.2rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 12rem;
+  }
+}
+
+.project-category__content {
+  @include blockContent;
+}
+
+.project-category__heading {
+  font-size: 9.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.384rem;
+  margin-bottom: 15rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.084rem;
+    margin-bottom: 6rem;
+  }
+
+  a {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+
+      transform: scaleX(1);
+      transition: transform 0.2s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
+}
+
+.project-category__list {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 25.2rem;
+
+  @include breakpointMF(small-tablet) {
+    &--type-1 {
+      .project-category__list-item {
+        &:nth-child(3n + 1) {
+          grid-column: 1 / 7;
+          .project-category__card-inner-title {
+            left: 10%;
+          }
+        }
+
+        &:nth-child(3n + 2) {
+          grid-column: 9 / -1;
+          .project-category__card-inner-title {
+            right: 10%;
+          }
+        }
+
+        &:nth-child(3n + 3) {
+          grid-column: 1 / 10;
+
+          .project-category__card-inner-title {
+            left: 10%;
+          }
+        }
+      }
+    }
+    &--type-2 {
+      .project-category__list-item {
+        &:nth-child(3n + 1) {
+          grid-column: 1 / 5;
+          .project-category__card-inner-title {
+            left: 10%;
+          }
+        }
+
+        &:nth-child(3n + 2) {
+          grid-column: 7 / -1;
+          .project-category__card-inner-title {
+            right: 10%;
+          }
+        }
+
+        &:nth-child(3n + 3) {
+          grid-column: 4 / -1;
+
+          .project-category__card-inner-title {
+            right: 10%;
+          }
+        }
+      }
+    }
+    &--type-3 {
+      .project-category__card-image-container {
+        &::before {
+          padding-bottom: 178%;
+        }
+      }
+      .project-category__list-item {
+        &:nth-child(3n + 1) {
+          grid-column: 1 / 3;
+          margin-right: -3rem;
+          .project-category__card-inner-title {
+            left: 10%;
+          }
+        }
+
+        &:nth-child(3n + 2) {
+          grid-column: 9 / -1;
+          .project-category__card-inner-title {
+            right: 10%;
+          }
+        }
+
+        &:nth-child(3n + 3) {
+          grid-column: 4 / 7;
+          margin-top: -55rem;
+          .project-category__card-inner-title {
+            left: -30%;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-gap: 1.6rem;
+    grid-row-gap: 6rem;
+
+    .project-category__list-item {
+      &:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+
+      &:nth-child(even) {
+        grid-column: 1 / 6;
+      }
+    }
+  }
+}
+
+.project-category__list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-category__card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  @include breakpoint(mobile) {
+    gap: 1.2rem;
+  }
+}
+
+.project-category__card-image-container {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
+.project-category__card-image-clipper {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0 100%);
+  transition: clip-path 0.8s ease-out;
+  overflow: hidden;
+  .project-category__list-item.revealed & {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.project-category__card-image-scaler {
+  position: absolute;
+  inset: 0;
+  transform: scale(1.2);
+  transition: transform 0.8s ease-out;
+
+  .project-category__list-item.revealed & {
+    transform: scale(1);
+  }
+}
+
+.project-category__card-inner-title {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 6rem;
+  line-height: 1.2;
+  color: white;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  white-space: nowrap;
+  width: max-content;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  overflow: hidden;
+
+  .project-category__card.active & {
+    opacity: 1;
+    visibility: inherit;
+    transition: opacity 0.4s, visibility 0.4s;
+
+    .project-category__card-inner-title-text {
+      animation-name: slideIn;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.project-category__card-inner-title-text {
+  display: block;
+
+  animation-name: slideOut;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.project-category__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s, visibility 0.4s;
+
+  @include breakpointMF(small-tablet) {
+    .project-category__list-item.hidden & {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0s linear 0.4s;
+    }
+  }
+}
+
+.project-category__card-title {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+  transition: opacity 0.4s, visibility 0.4s;
+
+  @include breakpointMF(small-tablet) {
+    .project-category__list-item.hidden & {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s, visibility 0s linear 0.4s;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.016rem;
+  }
+}
