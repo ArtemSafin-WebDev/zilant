@@ -49,10 +49,10 @@ export default function filters() {
       }
     });
 
-    if (window.matchMedia("(max-width: 640px)").matches) {
-      openAccordion(content);
-      element.classList.add("open");
-      active = true;
-    }
+    // if (window.matchMedia("(max-width: 640px)").matches) {
+    //   openAccordion(content);
+    //   element.classList.add("open");
+    //   active = true;
+    // }
   });
 }

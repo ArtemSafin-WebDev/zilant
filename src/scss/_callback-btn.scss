@@ -1,0 +1,37 @@
+.callback-btn {
+  position: fixed;
+  right: 5rem;
+  bottom: 5rem;
+  z-index: 50;
+
+  @include breakpoint(mobile) {
+    right: 2.2rem;
+    bottom: 1.4rem;
+  }
+}
+
+.callback-btn__link {
+  display: block;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.048rem;
+  padding: 1.4rem 3.2rem;
+  border-radius: 99.9rem;
+  background: black;
+  color: white;
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+    padding: 1.4rem 2.2rem;
+  }
+}

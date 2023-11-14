@@ -41,6 +41,10 @@
 
 .projects__filters {
   margin-bottom: 2.7rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
 }
 
 .projects__filter-toggle {
@@ -104,7 +108,7 @@
 
   @include breakpoint(mobile) {
     padding-top: 2.4rem;
-    padding-bottom: 3.3rem;
+    padding-bottom: 0;
     grid-template-columns: auto 1fr;
     grid-gap: 0;
     grid-row-gap: 2rem;

@@ -150,13 +150,36 @@
     grid-gap: 1.6rem;
     grid-row-gap: 6rem;
 
-    .project-category__list-item {
-      &:nth-child(odd) {
-        grid-column: 1 / -1;
-      }
+    &:not(.project-category__list--type-3) {
+      .project-category__list-item {
+        &:nth-child(odd) {
+          grid-column: 1 / -1;
+        }
 
-      &:nth-child(even) {
-        grid-column: 1 / 6;
+        &:nth-child(even) {
+          grid-column: 1 / 6;
+        }
+      }
+    }
+
+    &--type-3 {
+      .project-category__card-image-container {
+        &::before {
+          padding-bottom: 158%;
+        }
+      }
+      .project-category__list-item {
+        &:nth-child(3n + 1) {
+          grid-column: 1 / 5;
+        }
+
+        &:nth-child(3n + 2) {
+          grid-column: 2 / 6;
+        }
+
+        &:nth-child(3n + 3) {
+          grid-column: 3 / -1;
+        }
       }
     }
   }
