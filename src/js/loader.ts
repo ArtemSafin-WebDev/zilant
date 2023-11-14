@@ -107,5 +107,47 @@ export default function loader() {
         "<"
       );
     }
+
+    const aboutIntroHeading = document.querySelector<HTMLElement>(
+      ".about-intro__heading"
+    );
+    const aboutIntroImageWrapper = document.querySelector<HTMLElement>(
+      ".about-intro__image-wrapper"
+    );
+
+    if (pageHeader && aboutIntroHeading && aboutIntroImageWrapper) {
+      tl.from(
+        pageHeader,
+        {
+          y: 50,
+          autoAlpha: 0,
+          duration: 1,
+          clearProps: "all",
+          ease: "power3.out",
+        },
+        ">0.2"
+      );
+      tl.from(
+        aboutIntroHeading,
+        {
+          y: 50,
+          autoAlpha: 0,
+          duration: 1,
+
+          ease: "power3.out",
+        },
+        "<+=0.15"
+      );
+      tl.from(
+        aboutIntroImageWrapper,
+        {
+          autoAlpha: 0,
+          duration: 1,
+
+          ease: "power3.out",
+        },
+        "<"
+      );
+    }
   });
 }

@@ -1,0 +1,93 @@
+.about-numbers {
+  @include blockWrapper;
+  padding: 16rem 0;
+  background-color: #000;
+  color: #fff;
+
+  @include breakpoint(mobile) {
+    padding: 6rem 0;
+  }
+}
+
+.about-numbers__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: stretch;
+  }
+}
+
+.about-numbers__heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+  grid-column: 1 / 5;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+  }
+}
+
+.about-numbers__list {
+  grid-column: 5 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 10rem;
+
+  @include breakpoint(mobile) {
+    grid-gap: 1.6rem;
+    grid-row-gap: 4rem;
+  }
+}
+
+.about-numbers__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-numbers__card-amount {
+  font-size: 9.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.384rem;
+
+  @include breakpoint(mobile) {
+    font-size: 5.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 67.2px */
+    letter-spacing: -0.168rem;
+  }
+}
+
+.about-numbers__card-text {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.016rem;
+  }
+}

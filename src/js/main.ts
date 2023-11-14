@@ -11,6 +11,7 @@ import filters from "./filters";
 import projects from "./projects";
 import fileUpload from "./fileUpload";
 import callbackForm from "./callbackForm";
+import aboutTeam from "./aboutTeam";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loader();
   fileUpload();
   callbackForm();
+  aboutTeam();
 });
 
 window.addEventListener("load", () => {

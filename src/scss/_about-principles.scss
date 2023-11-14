@@ -1,0 +1,88 @@
+.about-principles {
+  @include blockWrapper;
+  margin-bottom: 25rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
+}
+
+.about-principles__content {
+  @include blockContent;
+}
+
+.about-principles__heading {
+  font-size: 9.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.384rem;
+  margin-bottom: 20rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.084rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.about-principles__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+
+  @include breakpoint(mobile) {
+    gap: 4rem;
+  }
+}
+
+.about-principles__card {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.4rem;
+  }
+}
+
+.about-principles__card-title {
+  grid-column: 1 / 5;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+  }
+}
+
+.about-principles__card-text {
+  grid-column: 5 / -1;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+  }
+}
