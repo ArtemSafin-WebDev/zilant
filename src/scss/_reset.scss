@@ -224,3 +224,11 @@ select:-webkit-autofill:focus {
   flex-direction: column;
   overflow-x: hidden;
 }
+
+.page-main--top-padding {
+  padding-top: 14.8rem;
+
+  @include breakpoint(mobile) {
+    padding-top: 10.4rem;
+  }
+}
