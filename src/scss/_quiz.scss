@@ -1,0 +1,473 @@
+.quiz {
+  @include blockWrapper;
+  background-color: #000;
+  color: white;
+  padding-top: 20.8rem;
+  padding-bottom: 20rem;
+
+  @include breakpoint(mobile) {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+}
+
+.quiz__content {
+  @include blockContent;
+}
+
+.quiz__top-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 13rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.4rem;
+    margin-bottom: 6rem;
+  }
+}
+
+.quiz__heading {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+  grid-column: 1 / 5;
+
+  @include breakpoint(mobile) {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.084rem;
+  }
+}
+
+.quiz__text {
+  grid-column: 5 / -1;
+  font-size: 6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.18rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+  }
+}
+
+.quiz__form {
+}
+
+.quiz__form-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.quiz__form-block {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: stretch;
+  }
+}
+
+.quiz__form-block-heading {
+  grid-column: 1 / 5;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+  }
+}
+
+.quiz__form-block-content {
+  grid-column: 5 / -1;
+}
+
+.quiz__form-block-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 3rem;
+  margin-top: -2rem;
+
+  @include breakpoint(mobile) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.quiz__form-block-field--fullwidth {
+  grid-column: 1 / -1;
+}
+
+.quiz__form-block-input {
+  height: 6.2rem;
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::placeholder {
+    color: white;
+  }
+}
+
+.quiz__form-file-upload {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 5rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+    margin-top: 4rem;
+  }
+}
+
+.quiz__form-file-upload-input {
+  display: none;
+}
+
+.quiz__form-block-specialization {
+  display: block;
+}
+
+.quiz__form-block-specialization-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  & > svg {
+    display: none;
+  }
+
+  @include breakpoint(mobile) {
+    & > svg {
+      flex-shrink: 0;
+      width: 2.4rem;
+      height: 2.4rem;
+      fill: rgba(255, 255, 255, 0.7);
+      transition: transform 0.2s;
+      display: block;
+      margin-left: auto;
+    }
+
+    .js-accordion.active & {
+      & > svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.quiz__form-block-specialization-placeholder-text {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+
+  @include breakpointMF(small-tablet) {
+    .has-checked-inputs & {
+      display: none;
+    }
+  }
+}
+
+.quiz__form-block-specialization-selected {
+  display: none;
+
+  align-items: center;
+  gap: 3.8rem;
+  row-gap: 1.6rem;
+  flex-wrap: wrap;
+
+  @include breakpointMF(small-tablet) {
+    .has-checked-inputs & {
+      display: flex;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.quiz__form-block-specialization-selected-item {
+  display: flex;
+  align-items: center;
+  gap: 3.8rem;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.02rem;
+  flex-shrink: 0;
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+}
+
+.quiz__form-block-specialization-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #fff;
+  flex-shrink: 0;
+  position: relative;
+  margin-left: auto;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 2px;
+    background-color: black;
+    border-radius: 5px;
+    transition: transform 0.2s;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .js-accordion.active & {
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.quiz__form-block-specialization-content {
+  height: 0;
+  overflow: hidden;
+}
+
+.quiz__form-block-specialization-content-inner {
+  padding-top: 3rem;
+
+  @include breakpoint(mobile) {
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: none;
+  }
+}
+
+.quiz__form-block-specialization-checkboxes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  grid-row-gap: 3rem;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+}
+
+.quiz__form-block-specialization-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  @include breakpoint(mobile) {
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: block;
+    letter-spacing: -0.016rem;
+  }
+}
+
+.quiz__form-block-specialization-checkbox-input {
+  display: none;
+}
+
+.quiz__form-block-specialization-checkbox-mark {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  border: 1px solid #fff;
+  display: grid;
+  place-items: center;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.quiz__form-block-specialization-checkbox-input:checked
+  ~ .quiz__form-block-specialization-checkbox-mark::before {
+  opacity: 1;
+}
+
+.quiz__form-block-specialization-checkbox-text {
+  @include breakpoint(mobile) {
+    padding: 2.2rem 1.9rem;
+    display: block;
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    .quiz__form-block-specialization-checkbox:last-child & {
+      border: none;
+    }
+  }
+}
+
+@include breakpoint(mobile) {
+  .quiz__form-block-specialization-checkbox-input:checked
+    ~ .quiz__form-block-specialization-checkbox-text {
+    background-color: white;
+    border-color: white;
+    color: black;
+  }
+}
+
+.quiz__form-controls {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 8rem;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3.2rem;
+    margin-top: 6rem;
+  }
+}
+
+.quiz__form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.056rem;
+  padding: 1.4rem 3.2rem;
+  border-radius: 99.9rem;
+  border: 1px solid white;
+  color: white;
+  transition: background-color 0.2s, color 0.2s;
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.018rem;
+    padding: 1.4rem 2.2rem;
+    align-self: flex-start;
+  }
+}
+
+.quiz__form-policy {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  max-width: 41rem;
+
+  @include breakpoint(mobile) {
+    max-width: none;
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.012rem;
+  }
+}

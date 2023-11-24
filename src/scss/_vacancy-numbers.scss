@@ -1,0 +1,95 @@
+.vacancy-numbers {
+  @include blockWrapper;
+  margin-bottom: 16rem;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 6rem;
+  }
+}
+
+.vacancy-numbers__content {
+  @include blockContent;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  align-items: flex-start;
+
+  @include breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4rem;
+  }
+}
+
+.vacancy-numbers__heading {
+  grid-column: 1 / 5;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.06rem;
+  }
+}
+
+.vacancy-numbers__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 10rem;
+  grid-column: 5 / -1;
+
+  @include breakpoint(mobile) {
+    grid-gap: 1.6rem;
+    grid-row-gap: 4rem;
+  }
+}
+
+.vacancy-numbers__card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include breakpoint(mobile) {
+    gap: 0;
+  }
+}
+
+.vacancy-numbers__card-amount {
+  font-size: 9.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  letter-spacing: -0.384rem;
+
+  @include breakpoint(mobile) {
+    font-size: 5.6rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.168rem;
+  }
+}
+
+.vacancy-numbers__card-text {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.08rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.054rem;
+  }
+}

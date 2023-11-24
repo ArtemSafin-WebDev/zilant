@@ -12,6 +12,9 @@ import projects from "./projects";
 import fileUpload from "./fileUpload";
 import callbackForm from "./callbackForm";
 import aboutTeam from "./aboutTeam";
+import vacancyIntro from "./vacancyIntro";
+import accordions from "./accordions";
+import specSelect from "./specSelect";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -26,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
   fileUpload();
   callbackForm();
   aboutTeam();
+  vacancyIntro();
+  accordions();
+  specSelect();
 });
 
 window.addEventListener("load", () => {
