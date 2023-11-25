@@ -21,6 +21,9 @@
   border-radius: 99.9rem;
   background: black;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-clip: padding-box;
+
   &:link,
   &:visited {
     color: white;

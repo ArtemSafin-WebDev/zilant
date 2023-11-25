@@ -3,6 +3,9 @@
   padding: 16rem 0;
   background-color: #000;
   color: #fff;
+  position: relative;
+  z-index: 3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
   @include breakpoint(mobile) {
     padding: 6rem 0;

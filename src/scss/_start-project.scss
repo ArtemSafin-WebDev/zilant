@@ -3,9 +3,20 @@
   padding-bottom: 23rem;
   background-color: #000;
   color: #fff;
+  margin-top: -1px;
+
+  &--subject {
+    padding-bottom: 20rem;
+    padding-top: 17rem;
+  }
 
   @include breakpoint(mobile) {
     padding-bottom: 8rem;
+
+    &--subject {
+      padding-top: 6rem;
+      padding-bottom: 0;
+    }
   }
 }
 

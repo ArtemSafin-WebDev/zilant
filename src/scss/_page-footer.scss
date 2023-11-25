@@ -50,8 +50,8 @@
 }
 
 .page-footer__logo {
-  margin-bottom: 6.3rem;
-
+  margin-bottom: 7.3rem;
+  margin-top: 0.3rem;
   @include breakpoint(mobile) {
     margin-bottom: 4.4rem;
     grid-column: 1 / -1;
@@ -62,7 +62,7 @@
 .page-footer__logo-image {
   display: block;
   height: auto;
-  width: 12.6rem;
+  width: 9.9rem;
 }
 .page-footer__offices {
   @include breakpoint(mobile) {
@@ -188,7 +188,7 @@
 
 .page-footer__bottom-row {
   display: grid;
-  grid-template-columns: minmax(0, 8fr) repeat(2, minmax(0, 2fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: flex-end;
 
   @include breakpoint(mobile) {
@@ -219,9 +219,8 @@
 
 .page-footer__made-by {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 1rem;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
@@ -254,8 +253,9 @@
 }
 
 .page-footer__made-by-logo {
-  width: 7.2rem;
+  width: 6.2rem;
   height: auto;
+  margin-bottom: -0.3rem;
 
   @include breakpoint(mobile) {
     margin-bottom: -0.2rem;

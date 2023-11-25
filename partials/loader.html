@@ -67,3 +67,10 @@
         }
     }
 </style>
+
+<script>
+    const ldr = document.querySelector('.loader');
+    if (window.sessionStorage.getItem("loader_played") === "Y") {
+        ldr.remove();
+    }
+</script>

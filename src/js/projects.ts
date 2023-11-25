@@ -14,13 +14,21 @@ export default function projects() {
     );
 
     cards.forEach((card) => {
-      document.addEventListener("loaderhidden", () => {
+      if (window.sessionStorage.getItem("loader_played") === "Y") {
         ScrollTrigger.create({
           trigger: card,
           start: "top+=50px bottom",
           onEnter: () => card.classList.add("revealed"),
         });
-      });
+      } else {
+        document.addEventListener("loaderhidden", () => {
+          ScrollTrigger.create({
+            trigger: card,
+            start: "top+=50px bottom",
+            onEnter: () => card.classList.add("revealed"),
+          });
+        });
+      }
     });
   });
 }

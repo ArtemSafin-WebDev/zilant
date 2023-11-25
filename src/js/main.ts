@@ -15,6 +15,7 @@ import aboutTeam from "./aboutTeam";
 import vacancyIntro from "./vacancyIntro";
 import accordions from "./accordions";
 import specSelect from "./specSelect";
+import imageReveal from "./imageReveal";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   vacancyIntro();
   accordions();
   specSelect();
+  imageReveal();
 });
 
 window.addEventListener("load", () => {
