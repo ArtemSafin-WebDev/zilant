@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function imageReveal() {
   const elements = Array.from(
-    document.querySelectorAll<HTMLElement>(".image-with-text")
+    document.querySelectorAll<HTMLElement>(".js-image-reveal, .image-with-text")
   );
 
   elements.forEach((element) => {
