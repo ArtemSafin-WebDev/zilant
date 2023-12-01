@@ -3,6 +3,10 @@ import isNumeric from "validator/es/lib/isNumeric";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Inputmask from "inputmask";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+
+dayjs.extend(customParseFormat);
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +20,7 @@ type Locale = {
   emailField: string;
   alphanumericField: string;
   phoneField: string;
+  dateField: string;
 };
 
 type Localization = {
@@ -29,12 +34,14 @@ const defaultLocalization: Localization = {
     emailField: "Введите корректный E-mail",
     alphanumericField: "Разрешены только цифры и буквы",
     phoneField: "Введите правильный номер телефона",
+    dateField: "Введите корректную дату",
   },
   en: {
     requiredField: "Field is required",
     emailField: "Enter correct E-mail",
     alphanumericField: "Only digits and numbers allowed",
     phoneField: "Enter correct phone number",
+    dateField: "Enter correct date",
   },
 };
 
@@ -140,6 +147,11 @@ class Validator {
         instance.mask(field);
       }
 
+      if (field.hasAttribute("data-date-input")) {
+        const instance = new Inputmask({ mask: "99.99.9999" });
+        instance.mask(field);
+      }
+
       if (field.matches('[inputmode="numeric"]')) {
         field.addEventListener("beforeinput", (event) => {
           let beforeValue = field.value;
@@ -193,6 +205,15 @@ class Validator {
         this.errors.push({
           element: field,
           message: this.localization[this.locale].alphanumericField,
+        });
+      }
+    }
+    if (value && field.hasAttribute("data-date-input")) {
+      const cleanedValue = value.replace(/\s/g, "");
+      if (!dayjs(cleanedValue.trim(), "DD.MM.YYYY", true).isValid()) {
+        this.errors.push({
+          element: field,
+          message: this.localization[this.locale].dateField,
         });
       }
     }

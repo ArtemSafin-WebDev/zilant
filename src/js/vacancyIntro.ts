@@ -51,6 +51,18 @@ export default function vacancyIntro() {
         );
         previews.forEach((preview) => preview.classList.remove("active"));
         matchingPreview?.classList.add("active");
+
+        previews.forEach((preview) => {
+          const video = preview.querySelector("video");
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+        const video = matchingPreview?.querySelector("video");
+        if (video) {
+          video.play();
+        }
       }
     };
 

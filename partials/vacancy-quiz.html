@@ -10,277 +10,301 @@
                 в знакомстве с уникальными специалистами. Заполните небольшую анкету и давайте знакомиться.
             </div>
         </div>
-        <form action="/" class="quiz__form">
-            <div class="quiz__form-blocks">
-                <div class="quiz__form-block">
-                    <h3 class="quiz__form-block-heading">
-                        Общие данные
-                    </h3>
-                    <div class="quiz__form-block-content">
-                        <div class="quiz__form-block-fields">
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Имя"
-                                        name="first-name" required="">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Фамилия"
-                                        name="last-name" required="">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Отчество"
-                                        name="surname">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Город, область"
-                                        name="address">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Дата рождения"
-                                        name="birthdate" data-date-input="">
-                                </div>
-                            </div>
-                        </div>
-                        <label class="quiz__form-file-upload js-file-upload">
-                            <input type="file" class="quiz__form-file-upload-input" name="file">
-                            <svg width="14" height="14" aria-hidden="true">
-                                <use xlink:href="#upload"></use>
-                            </svg>
-                            <span class="quiz__form-file-upload-text js-file-upload-text">
-                                Загрузить фото
-                            </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="quiz__form-block">
-                    <h3 class="quiz__form-block-heading">
-                        Специальная информация
-                    </h3>
-                    <div class="quiz__form-block-content">
-                        <div class="quiz__form-block-fields">
-                            <div class="quiz__form-block-field quiz__form-block-field--fullwidth">
-                                <div class="quiz__form-block-specialization js-accordion">
-                                    <div class="quiz__form-block-specialization-header js-accordion-btn">
-                                        <span class="quiz__form-block-specialization-placeholder-text">
-                                            Укажите специализацию
-                                        </span>
-                                        <span class="quiz__form-block-specialization-selected">
-
-                                        </span>
-                                        <span class="quiz__form-block-specialization-icon">
-
-                                        </span>
-
-                                        <svg width="14" height="14" aria-hidden="true">
-                                            <use xlink:href="#arrow-down"></use>
-                                        </svg>
+        <form action="/" class="quiz__form js-quiz-form">
+            <div class="quiz__form-main-content">
+                <div class="quiz__form-blocks">
+                    <div class="quiz__form-block">
+                        <h3 class="quiz__form-block-heading">
+                            Общие данные
+                        </h3>
+                        <div class="quiz__form-block-content">
+                            <div class="quiz__form-block-fields">
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Имя"
+                                            name="first-name" required="">
                                     </div>
-                                    <div class="quiz__form-block-specialization-content js-accordion-content">
-                                        <div class="quiz__form-block-specialization-content-inner">
-                                            <div class="quiz__form-block-specialization-checkboxes">
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Продюсер проектов">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Фамилия"
+                                            name="last-name" required="">
+                                    </div>
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Отчество"
+                                            name="surname">
+                                    </div>
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Город, область"
+                                            name="address">
+                                    </div>
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Дата рождения"
+                                            name="birthdate" data-date-input="" required="">
+                                    </div>
+                                </div>
+                            </div>
+                            <label class="quiz__form-file-upload js-file-upload">
+                                <input type="file" class="quiz__form-file-upload-input" name="file">
+                                <svg width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#upload"></use>
+                                </svg>
+                                <span class="quiz__form-file-upload-text js-file-upload-text">
+                                    Загрузить фото
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="quiz__form-block">
+                        <h3 class="quiz__form-block-heading">
+                            Специальная информация
+                        </h3>
+                        <div class="quiz__form-block-content">
+                            <div class="quiz__form-block-fields">
+                                <div class="quiz__form-block-field quiz__form-block-field--fullwidth">
+                                    <div class="quiz__form-block-specialization js-accordion">
+                                        <div class="quiz__form-block-specialization-header js-accordion-btn">
+                                            <span class="quiz__form-block-specialization-placeholder-text">
+                                                Укажите специализацию
+                                            </span>
+                                            <span class="quiz__form-block-specialization-selected">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Продюсер проектов
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Режиссёр">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                            </span>
+                                            <span class="quiz__form-block-specialization-icon">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Режиссёр
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Видеооператор">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                            </span>
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Видеооператор
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Сценарист / Креативщик">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                            <svg width="14" height="14" aria-hidden="true">
+                                                <use xlink:href="#arrow-down"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="quiz__form-block-specialization-content js-accordion-content">
+                                            <div class="quiz__form-block-specialization-content-inner">
+                                                <div class="quiz__form-block-specialization-checkboxes">
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Продюсер проектов">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Сценарист / Креативщик
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Дизайнер">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Продюсер проектов
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Режиссёр">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Дизайнер
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Актёр / Актриса">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Режиссёр
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Видеооператор">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Актёр / Актриса
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Гафер / Осветитель">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Видеооператор
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Сценарист / Креативщик">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Гафер / Осветитель
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Аренда кино-видео оборудования">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Сценарист / Креативщик
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Дизайнер">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Аренда кино-видео оборудования
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Оператор квадракоптера">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Дизайнер
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Актёр / Актриса">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Оператор квадракоптера
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Видеомонтажёр">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Актёр / Актриса
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Гафер / Осветитель">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Видеомонтажёр
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Montion-дизайнер">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Гафер / Осветитель
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Аренда кино-видео оборудования">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Montion-дизайнер
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Cпецалист VFX">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Аренда кино-видео оборудования
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Оператор квадракоптера">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Cпецалист VFX
-                                                    </span>
-                                                </label>
-                                                <label class="quiz__form-block-specialization-checkbox">
-                                                    <input type="checkbox" name="specialization[]"
-                                                        class="quiz__form-block-specialization-checkbox-input"
-                                                        value="Sound-дизайнер">
-                                                    <span class="quiz__form-block-specialization-checkbox-mark">
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Оператор квадракоптера
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Видеомонтажёр">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
 
-                                                    </span>
-                                                    <span class="quiz__form-block-specialization-checkbox-text">
-                                                        Sound-дизайнер
-                                                    </span>
-                                                </label>
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Видеомонтажёр
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Montion-дизайнер">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
+
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Montion-дизайнер
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Cпецалист VFX">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
+
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Cпецалист VFX
+                                                        </span>
+                                                    </label>
+                                                    <label class="quiz__form-block-specialization-checkbox">
+                                                        <input type="checkbox" name="specialization[]"
+                                                            class="quiz__form-block-specialization-checkbox-input"
+                                                            value="Sound-дизайнер">
+                                                        <span class="quiz__form-block-specialization-checkbox-mark">
+
+                                                        </span>
+                                                        <span class="quiz__form-block-specialization-checkbox-text">
+                                                            Sound-дизайнер
+                                                        </span>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="quiz__form-block-field quiz__form-block-field--fullwidth">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input"
+                                            placeholder="Расскажите пару слов о себе" name="about-you">
+                                    </div>
+                                </div>
+
                             </div>
-                            <div class="quiz__form-block-field quiz__form-block-field--fullwidth">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input"
-                                        placeholder="Расскажите пару слов о себе" name="about-you">
+
+                        </div>
+                    </div>
+                    <div class="quiz__form-block">
+                        <h3 class="quiz__form-block-heading">
+                            Общие данные
+                        </h3>
+                        <div class="quiz__form-block-content">
+                            <div class="quiz__form-block-fields">
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="tel" class="quiz__form-block-input" placeholder="Телефон"
+                                            name="phone" required="">
+                                    </div>
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="email" class="quiz__form-block-input" placeholder="Почта"
+                                            name="email" required="">
+                                    </div>
+                                </div>
+                                <div class="quiz__form-block-field">
+                                    <div class="quiz__form-block-input-wrapper">
+                                        <input type="text" class="quiz__form-block-input" placeholder="Сайт"
+                                            name="website">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="quiz__form-controls">
+                                <button class="quiz__form-submit" type="submit">
+                                    Отправить
+                                </button>
+                                <div class="quiz__form-policy">
+                                    Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных
+                                    данных
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
                 </div>
-                <div class="quiz__form-block">
-                    <h3 class="quiz__form-block-heading">
-                        Общие данные
-                    </h3>
-                    <div class="quiz__form-block-content">
-                        <div class="quiz__form-block-fields">
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="tel" class="quiz__form-block-input" placeholder="Телефон" name="phone"
-                                        required="">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="email" class="quiz__form-block-input" placeholder="Почта" name="email"
-                                        required="">
-                                </div>
-                            </div>
-                            <div class="quiz__form-block-field">
-                                <div class="quiz__form-block-input-wrapper">
-                                    <input type="text" class="quiz__form-block-input" placeholder="Сайт" name="website">
-                                </div>
-                            </div>
+            </div>
 
-                        </div>
-                        <div class="quiz__form-controls">
-                            <button class="quiz__form-submit" type="submit">
-                                Отправить
-                            </button>
-                            <div class="quiz__form-policy">
-                                Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных
-                            </div>
-                        </div>
-
-                    </div>
+            <div class="quiz__form-success">
+                <h3 class="quiz__form-success-heading">
+                    Спасибо за заявку!
+                </h3>
+                <div class="quiz__form-success-text">
+                    Письмо с заявкой отправлено и мы его получили. Свяжемся с Вами в ближайшее время.
                 </div>
+                <a class="quiz__form-success-btn" href="#">
+                    На главную
+                </a>
+            </div>
+            <div class="quiz__form-error">
+                <h3 class="quiz__form-error-heading">
+                    Произошла ошибка
+                </h3>
+                <button class="quiz__form-error-btn" type="button">
+                    Попробовать снова
+                </button>
             </div>
         </form>
     </div>

@@ -1,8 +1,6 @@
-import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-
 const elements = Array.from(document.querySelectorAll(".js-image-slider"));
 
-elements.forEach((element) => {
+function init(element) {
   const container = element.querySelector(".swiper");
   if (!container) return;
 
@@ -15,4 +13,20 @@ elements.forEach((element) => {
       nextEl: element.querySelector(".image-slider__arrow--next"),
     },
   });
-});
+}
+
+elements.forEach((element) => init(element));
+
+function initializeACFSlider($block) {
+  console.log("Native slider element", $block[0]);
+  init($block[0]);
+}
+
+//@ts-ignore
+if (window.acf) {
+  //@ts-ignore
+  window.acf.addAction(
+    "render_block_preview/type=image-slider",
+    initializeACFSlider
+  );
+}

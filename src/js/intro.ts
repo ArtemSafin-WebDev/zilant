@@ -10,7 +10,7 @@ export default function intro() {
       slideSelector: ".intro__slider-slide",
 
       transitionDuration: 1,
-      autoplayDelay: 4,
+      autoplayDelay: 10,
     });
     instance.autoplay();
   });

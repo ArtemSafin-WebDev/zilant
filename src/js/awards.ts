@@ -27,7 +27,7 @@ export default function awards() {
               activeSlide = 0;
             }
 
-            gsap.delayedCall(2, () => {
+            gsap.delayedCall(3, () => {
               nextSlide(activeSlide, prevSlide);
             });
           },

@@ -15,7 +15,7 @@ export default class IntroSlider {
   public slides: HTMLElement[];
   public activeIndex: number = 0;
   private transitionDuration = 0.5;
-  private autoplayDelay = 3;
+  private autoplayDelay = 10;
   private animating: boolean = false;
   private slidesCount: number;
   public autoplayPaused: boolean = false;
@@ -58,6 +58,11 @@ export default class IntroSlider {
       });
     });
     const currentSlide = this.slides[this.activeIndex];
+
+    const video = currentSlide.querySelector("video");
+    if (video) {
+      video.play();
+    }
 
     gsap.set(currentSlide, {
       zIndex: 4,
@@ -111,7 +116,12 @@ export default class IntroSlider {
     if (!this.autoplayPaused) {
       this.updatePagination(this.activeIndex);
       this.autoplayTimer?.kill();
-      this.autoplayTimer = gsap.delayedCall(this.autoplayDelay, async () => {
+      const activeSlide = this.slides[this.activeIndex];
+      const delay = activeSlide.hasAttribute("data-delay")
+        ? Number(activeSlide.getAttribute("data-delay"))
+        : this.autoplayDelay;
+      console.log("Delay 3", delay);
+      this.autoplayTimer = gsap.delayedCall(delay, async () => {
         this.changeSlideTo(this.calculateNextIndex());
       });
     }
@@ -119,6 +129,17 @@ export default class IntroSlider {
     const nextSlideImage = nextSlide.querySelector<HTMLElement>(
       ".intro__slider-card-bg-zoom-wrapper"
     );
+
+    this.slides.forEach((slide) => {
+      const video = slide.querySelector("video");
+      if (!video) return;
+      video.pause();
+      video.currentTime = 0;
+    });
+    const video = nextSlide.querySelector("video");
+    if (video) {
+      video.play();
+    }
 
     const tl = gsap.timeline({
       onComplete: () => {
@@ -176,11 +197,18 @@ export default class IntroSlider {
 
       if (bulletIndex === index) {
         bullet.classList.add("active");
+
+        const activeSlide = this.slides[index];
+        const delay = activeSlide.hasAttribute("data-delay")
+          ? Number(activeSlide.getAttribute("data-delay"))
+          : this.autoplayDelay;
+
+        console.log("Delay 1", delay);
         gsap.fromTo(
           progress,
           { drawSVG: "0% 0%" },
           {
-            duration: this.autoplayDelay,
+            duration: delay,
             drawSVG: "0% 100%",
             ease: "none",
           }
@@ -219,7 +247,15 @@ export default class IntroSlider {
 
   public autoplay() {
     this.updatePagination(this.activeIndex);
-    this.autoplayTimer = gsap.delayedCall(this.autoplayDelay, async () => {
+
+    const activeSlide = this.slides[this.activeIndex];
+
+    const delay = activeSlide.hasAttribute("data-delay")
+      ? Number(activeSlide.getAttribute("data-delay"))
+      : this.autoplayDelay;
+    console.log("Delay 2", delay);
+
+    this.autoplayTimer = gsap.delayedCall(delay, async () => {
       if (this.autoplayPaused) return;
       this.changeSlideTo(this.calculateNextIndex());
     });

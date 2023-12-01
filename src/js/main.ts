@@ -16,6 +16,8 @@ import vacancyIntro from "./vacancyIntro";
 import accordions from "./accordions";
 import specSelect from "./specSelect";
 import imageReveal from "./imageReveal";
+import fancybox from "./fancybox";
+import quizForm from "./quizForm";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -34,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   accordions();
   specSelect();
   imageReveal();
+  fancybox();
+  quizForm();
 });
 
 window.addEventListener("load", () => {
