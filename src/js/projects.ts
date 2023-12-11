@@ -41,54 +41,71 @@ export default function projects() {
         ".projects__filters-checkbox-input"
       )
     );
+
+    const typeBtns = Array.from(
+      element.querySelectorAll<HTMLInputElement>(".projects__types-radio-input")
+    );
+
+    if (!form) return;
     const controller = new AbortController();
+
+    const sendData = async () => {
+      let url = form.action;
+
+      const params = new URLSearchParams(new FormData(form) as any);
+
+      console.log("URL ACTION", url);
+
+      console.log("Params", params);
+      try {
+        const response = await axios.get(url, {
+          signal: controller.signal,
+          params,
+        });
+
+        const data = response.data;
+        const parser = new DOMParser();
+        const nextPageHtml = parser.parseFromString(data, "text/html");
+        const nextResults = Array.from(
+          nextPageHtml.querySelectorAll<HTMLLIElement>(".projects__list-item")
+        );
+
+        window.history.replaceState({}, "", `${location.pathname}?${params}`);
+
+        console.log("Data", data);
+
+        if (nextResults && list) {
+          gsap.to(".projects__card", {
+            autoAlpha: 0,
+            duration: 0.4,
+            onComplete: () => {
+              list.innerHTML = "";
+              nextResults.forEach((item) => {
+                const card = item.querySelector<HTMLElement>(".projects__card");
+                list.appendChild(item);
+
+                setTimeout(() => {
+                  card?.classList.add("revealed");
+                  ScrollTrigger.refresh();
+                }, 200);
+              });
+            },
+          });
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
     if (!form) return;
     radioBtns.forEach((btn) => {
-      btn.addEventListener("change", async () => {
-        const checkedBtn = radioBtns.find((btn) => btn.checked);
-        const value = checkedBtn?.value;
-        let url = "/projects";
-        if (value !== "all") {
-          url = `${form?.action}/${value}`;
-        }
-
-        try {
-          const response = await axios.get(url, {
-            signal: controller.signal,
-          });
-
-          const data = response.data;
-          const parser = new DOMParser();
-          const nextPageHtml = parser.parseFromString(data, "text/html");
-          const nextResults = Array.from(
-            nextPageHtml.querySelectorAll<HTMLLIElement>(".projects__list-item")
-          );
-
-          console.log("Data", data);
-
-          if (nextResults && list) {
-            gsap.to(".projects__card", {
-              autoAlpha: 0,
-              duration: 0.4,
-              onComplete: () => {
-                list.innerHTML = "";
-                nextResults.forEach((item) => {
-                  const card =
-                    item.querySelector<HTMLElement>(".projects__card");
-                  list.appendChild(item);
-
-                  setTimeout(() => {
-                    card?.classList.add("revealed");
-                    ScrollTrigger.refresh();
-                  }, 200);
-                });
-              },
-            });
-          }
-        } catch (err) {
-          console.error(err);
-        }
+      btn.addEventListener("change", () => {
+        sendData();
+      });
+    });
+    typeBtns.forEach((btn) => {
+      btn.addEventListener("change", () => {
+        sendData();
       });
     });
   });

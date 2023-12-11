@@ -4,6 +4,7 @@ import callback from "./pages-data/callback";
 import projectDetail from "./pages-data/project-detail";
 import vacancy from "./pages-data/vacancy";
 import subject from "./pages-data/subject";
+import notFound from "./pages-data/not-found";
 
 const pagesConfig = {
   ...home,
@@ -12,6 +13,7 @@ const pagesConfig = {
   ...projectDetail,
   ...vacancy,
   ...subject,
+  ...notFound,
 };
 
 export default pagesConfig;

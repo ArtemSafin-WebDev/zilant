@@ -16,18 +16,23 @@
 }
 
 .projects__heading {
+  b {
+    font-weight: inherit;
+    display: inline-block;
+  }
+}
+
+.projects__types {
   font-size: 6rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   letter-spacing: -0.18rem;
   margin-bottom: 9.2rem;
-
-  b {
-    font-weight: inherit;
-    display: inline-block;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
-  }
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4em;
 
   @include breakpoint(mobile) {
     font-size: 2.8rem;
@@ -36,6 +41,58 @@
     line-height: 120%;
     letter-spacing: -0.084rem;
     margin-bottom: 6rem;
+  }
+}
+
+.projects__types-divider {
+  margin-left: -2rem;
+  display: block;
+  &:last-child {
+    display: none;
+  }
+}
+
+.projects__types-radio {
+  cursor: pointer;
+  user-select: none;
+}
+
+.projects__types-radio-input {
+  display: none;
+}
+
+.projects__types-radio-text {
+  display: block;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+    width: 100%;
+    transition: opacity 0.2s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    width: 100%;
+    transition: opacity 0.2s;
+    opacity: 0;
+  }
+}
+
+.projects__types-radio-input:checked ~ .projects__types-radio-text {
+  &::before {
+    opacity: 0;
+  }
+
+  &::after {
+    opacity: 1;
   }
 }
 
@@ -143,7 +200,7 @@
   }
 }
 
-.projects__filters-form {
+.projects__filters-wrapper {
   grid-area: list;
 }
 

@@ -30,11 +30,11 @@
 }
 
 .quote__author {
-  grid-column: 1 / 4;
+  grid-column: 1 / 5;
 }
 
 .quote__text {
-  grid-column: 5 / -1;
+  grid-column: 6 / -1;
   font-size: calc(4rem * var(--scale-factor, 1));
   font-style: normal;
   font-weight: 400;

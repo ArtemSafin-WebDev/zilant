@@ -1,103 +1,155 @@
 <section class="projects">
     <div class="projects__content">
-        <h1 class="projects__heading">
-            <b>Презентационные ролики</b>, <b>2D/3D графика</b>, <b>рекламные ролики</b>, <b>нейросети</b>,
-            <b>Reels</b>,
-            <b>Shorts</b>
-        </h1>
-        {{!-- <div class="projects__filters js-projects-filters">
-            <button class="projects__filter-toggle" type="button">
-                Фильтры
-                <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="#filters-close"></use>
-                </svg>
-            </button>
-            <div class="projects__filters-dropdown">
-                <div class="projects__filters-dropdown-inner">
-                    <h2 class="projects__filters-title">
-                        Сфера
-                    </h2>
-                    <form action="/" method="GET" class="projects__filters-form">
-                        <ul class="projects__filters-list">
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="1"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Недвижимость и пространства
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="2"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        IT и сервисы
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="3"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Культура и искусство
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="4"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Медиа и реклама
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="5"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Retail
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="6"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Мода и красота
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="7"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Финансы
-                                    </span>
-                                </label>
-                            </li>
-                            <li class="projects__filters-list-item">
-                                <label class="projects__filters-checkbox">
-                                    <input type="radio" name="filters" value="8"
-                                        class="projects__filters-checkbox-input">
-                                    <span class="projects__filters-checkbox-text">
-                                        Авто и транспорт
-                                    </span>
-                                </label>
-                            </li>
-                        </ul>
 
-                    </form>
-
+        <form action="/" method="GET" class="projects__filters-form">
+            <div class="projects__types">
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="presentation" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        Презентационные ролики
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="2d" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        2D/3D графика
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="commercial" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        рекламные ролики
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="neuro" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        нейросети
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="Reels" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        Reels
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+                <label class="projects__types-radio">
+                    <input type="radio" name="type" value="Shorts" class="projects__types-radio-input">
+                    <span class="projects__types-radio-text">
+                        Shorts
+                    </span>
+                </label>
+                <span class="projects__types-divider">
+                    ,
+                </span>
+            </div>
+            <div class="projects__filters js-projects-filters">
+                <button class="projects__filter-toggle" type="button">
+                    Фильтры
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#filters-close"></use>
+                    </svg>
+                </button>
+                <div class="projects__filters-dropdown">
+                    <div class="projects__filters-dropdown-inner">
+                        <h2 class="projects__filters-title">
+                            Сфера
+                        </h2>
+                        <div class="projects__filters-wrapper">
+                            <ul class="projects__filters-list">
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="1"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Недвижимость и пространства
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="2"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            IT и сервисы
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="3"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Культура и искусство
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="4"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Медиа и реклама
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="5"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Retail
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="6"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Мода и красота
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="7"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Финансы
+                                        </span>
+                                    </label>
+                                </li>
+                                <li class="projects__filters-list-item">
+                                    <label class="projects__filters-checkbox">
+                                        <input type="radio" name="filters" value="8"
+                                            class="projects__filters-checkbox-input">
+                                        <span class="projects__filters-checkbox-text">
+                                            Авто и транспорт
+                                        </span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div> --}}
+        </form>
         <ul class="projects__list">
             <li class="projects__list-item">
                 <a href="#" class="projects__card">

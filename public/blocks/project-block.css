@@ -111,10 +111,8 @@
   }
 }
 
-@media (max-width: 640px) {
-  .project-block__card-inner-title {
-    display: none;
-  }
+.project-block__card-inner-title {
+  display: none;
 }
 
 @keyframes slideIn {

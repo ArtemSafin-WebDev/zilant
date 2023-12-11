@@ -5,6 +5,9 @@ export default function fileUpload() {
     const input = element.querySelector<HTMLInputElement>('input[type="file"]');
     const label = element.querySelector(".js-file-upload-text");
     const form = element.closest<HTMLFormElement>("form");
+    const clearBtn = element.querySelector<HTMLButtonElement>(
+      ".js-file-upload-clear"
+    );
 
     if (!input || !label || !form) return;
 
@@ -13,6 +16,9 @@ export default function fileUpload() {
     input.addEventListener("change", () => {
       if (input.files && input.files.length) {
         label.textContent = input.files[0].name;
+        element.classList.add("file-loaded");
+      } else {
+        element.classList.remove("file-loaded");
       }
     });
 
@@ -35,6 +41,17 @@ export default function fileUpload() {
         label.textContent = originalLabelText;
         element.classList.remove("file-loaded");
         element.classList.remove("dragged");
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        input.value = "";
+        label.textContent = originalLabelText;
+        element.classList.remove("file-loaded");
+        element.classList.remove("dragged");
+        input.dispatchEvent(new Event("change"));
       });
     }
   });
