@@ -55,6 +55,16 @@
 .projects__types-radio {
   cursor: pointer;
   user-select: none;
+
+  @media (hover: hover) {
+    &:hover {
+      .projects__types-radio-input:not(:checked) ~ .projects__types-radio-text {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
 }
 
 .projects__types-radio-input {
@@ -81,8 +91,8 @@
     bottom: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 1);
     width: 100%;
-    transition: opacity 0.2s;
-    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: scaleX(0);
   }
 }
 
@@ -92,7 +102,7 @@
   }
 
   &::after {
-    opacity: 1;
+    transform: scaleX(1);
   }
 }
 

@@ -91,6 +91,17 @@
     padding-bottom: 54%;
   }
 }
+.production__video-wrapper {
+  position: relative;
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  overflow: hidden;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
 
 .production__image {
   position: absolute;

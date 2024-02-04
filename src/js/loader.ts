@@ -37,17 +37,17 @@ export default function loader() {
   const introSlider = document.querySelector<HTMLElement>(".intro__slider");
 
   if (pageHeader && introText && introSlider) {
-    tl.from(
-      pageHeader,
-      {
-        y: 50,
-        autoAlpha: 0,
-        duration: 1,
-        clearProps: "all",
-        ease: "power3.out",
-      },
-      ">0.2"
-    );
+    // tl.from(
+    //   pageHeader,
+    //   {
+    //     y: 50,
+    //     autoAlpha: 0,
+    //     duration: 1,
+    //     clearProps: "all",
+    //     ease: "power3.out",
+    //   },
+    //   ">0.2"
+    // );
     if (introText) {
       tl.from(
         introText,
@@ -80,17 +80,17 @@ export default function loader() {
   const projectsFilters =
     document.querySelector<HTMLElement>(".projects__filters");
   if (projectsHeading && pageHeader) {
-    tl.from(
-      pageHeader,
-      {
-        y: 50,
-        autoAlpha: 0,
-        duration: 1,
-        clearProps: "all",
-        ease: "power3.out",
-      },
-      ">0.2"
-    );
+    // tl.from(
+    //   pageHeader,
+    //   {
+    //     y: 50,
+    //     autoAlpha: 0,
+    //     duration: 1,
+    //     clearProps: "all",
+    //     ease: "power3.out",
+    //   },
+    //   ">0.2"
+    // );
     tl.from(
       projectsHeading,
       {
@@ -122,17 +122,17 @@ export default function loader() {
   );
 
   if (pageHeader && aboutIntroHeading && aboutIntroImageWrapper) {
-    tl.from(
-      pageHeader,
-      {
-        y: 50,
-        autoAlpha: 0,
-        duration: 1,
-        clearProps: "all",
-        ease: "power3.out",
-      },
-      ">0.2"
-    );
+    // tl.from(
+    //   pageHeader,
+    //   {
+    //     y: 50,
+    //     autoAlpha: 0,
+    //     duration: 1,
+    //     clearProps: "all",
+    //     ease: "power3.out",
+    //   },
+    //   ">0.2"
+    // );
     tl.from(
       aboutIntroHeading,
       {

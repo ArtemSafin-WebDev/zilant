@@ -1,15 +1,25 @@
 .page-header {
   @include blockWrapper;
-
-  z-index: 80;
-  position: absolute;
+  z-index: 120;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-
+  background-color: #fff;
+  transition: background-color 0.2s, transform 0.4s;
   &--white {
     color: white;
+    background-color: transparent;
   }
+
+  .header-hidden:not(.menu-open) & {
+    transform: translateY(-100%);
+  }
+}
+
+.page-header--white.page-header--fixed {
+  background-color: white;
+  color: black;
 }
 
 .page-header__content {
@@ -34,7 +44,7 @@
   width: 9.8rem;
   transition: filter 0.2s;
 
-  body:not(.menu-open) .page-header--white & {
+  body:not(.menu-open) .page-header--white:not(.page-header--fixed) & {
     filter: invert(100%);
   }
 
@@ -138,12 +148,21 @@
         transition: opacity 0.2s, visibility 0.2s;
       }
 
-      .page-header__nav-link {
-        &::before {
-          transform: scaleX(1);
-        }
+      .page-header__nav-link > span {
+        background-size: 100% 1px;
       }
     }
+  }
+}
+
+@include breakpoint(mobile) {
+  .page-header__nav-list-item:not(:has(.page-header__nav-dropdown))
+    .page-header__nav-link {
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.084rem;
   }
 }
 
@@ -155,20 +174,21 @@
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -0.02rem;
+  text-decoration: none;
 
-  @include breakpointMF(small-tablet) {
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: currentColor;
-      transform-origin: left center;
-      transform: scaleX(0);
-      transition: transform 0.2s;
+  & > span {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.25s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      & > span {
+        background-size: 100% 1px;
+      }
     }
   }
 
@@ -187,9 +207,9 @@
   @include breakpointMF(small-tablet) {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-
+    padding-top: 1px;
+    left: 0;
+    margin-left: -2.4rem;
     width: max-content;
     max-width: 24rem;
     opacity: 0;
@@ -230,28 +250,23 @@
   font-weight: 400;
   line-height: 110%;
   letter-spacing: -0.02rem;
-  @include breakpointMF(small-tablet) {
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: currentColor;
-      transform-origin: left center;
-      transform: scaleX(0);
-      transition: transform 0.2s;
-    }
-    @media (hover: hover) {
-      &:hover {
-        &::before {
-          transform: scaleX(1);
-        }
+
+  & > span {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.25s ease-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      & > span {
+        background-size: 100% 1px;
       }
     }
   }
+
   @include breakpoint(mobile) {
     font-size: 2.8rem;
     font-style: normal;
@@ -281,7 +296,7 @@
       transition: opacity 0.2s, visibility 0.2s, background-color 0.2s;
     }
 
-    body:not(.menu-open) .page-header--white & {
+    body:not(.menu-open) .page-header--white:not(.page-header--fixed) & {
       & > span {
         background-color: white;
       }

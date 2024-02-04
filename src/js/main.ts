@@ -18,6 +18,8 @@ import specSelect from "./specSelect";
 import imageReveal from "./imageReveal";
 import fancybox from "./fancybox";
 import quizForm from "./quizForm";
+import fixedHeader from "./fixed";
+import aboutSlider from "./aboutSlider";
 
 document.addEventListener("DOMContentLoaded", () => {
   menu();
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   imageReveal();
   fancybox();
   quizForm();
+  fixedHeader();
+  aboutSlider();
 });
 
 window.addEventListener("load", () => {
