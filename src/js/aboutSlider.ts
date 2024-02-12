@@ -12,8 +12,10 @@ export default function aboutSlider() {
     if (!container) return;
     new Swiper(container, {
       slidesPerView: "auto",
-      speed: 600,
+      speed: 800,
       modules: [Navigation],
+      loop: true,
+      longSwipesRatio: 0.2,
       navigation: {
         prevEl: element.querySelector<HTMLButtonElement>(
           ".about-slider__arrow--prev"

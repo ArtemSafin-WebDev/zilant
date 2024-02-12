@@ -63,7 +63,8 @@
 .page-footer__logo-image {
   display: block;
   height: auto;
-  width: 9.9rem;
+  width: 15rem;
+  filter: invert(100%);
 }
 .page-footer__offices {
   @include breakpoint(mobile) {

@@ -1,3 +1,11 @@
+.vacancy-video {
+  @include blockWrapper;
+}
+
+.vacancy-video-inner {
+  @include blockContent;
+}
+
 .vacancy-image__wrapper {
   position: relative;
   &::before {
