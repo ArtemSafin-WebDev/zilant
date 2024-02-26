@@ -130,6 +130,10 @@
 .next__image-wrapper {
   position: relative;
   grid-column: 1 / -1;
+
+  &--video {
+    @include blockContent;
+  }
   &::before {
     content: "";
     display: block;

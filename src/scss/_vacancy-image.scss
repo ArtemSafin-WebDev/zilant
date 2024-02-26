@@ -1,5 +1,9 @@
 .vacancy-video {
   @include blockWrapper;
+  padding-top: 6rem;
+  @include breakpoint(mobile) {
+    padding-top: 2rem;
+  }
 }
 
 .vacancy-video-inner {

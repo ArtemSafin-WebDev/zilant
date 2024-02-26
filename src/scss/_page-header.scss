@@ -217,7 +217,7 @@
     transition: opacity 0.4s, visibility 0s linear 0.4s;
     z-index: 10;
 
-    .page-header:not(.page-header--white):not(.page-header--fixed) & {
+    .page-header:not(.page-header--white) & {
       background-color: #fff;
       &::before {
         content: "";

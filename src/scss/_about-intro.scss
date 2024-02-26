@@ -1,7 +1,7 @@
 .about-intro {
   @include blockWrapper;
   padding-top: 14.8rem;
-  margin-bottom: 25rem;
+  margin-bottom: 12rem;
   grid-row-gap: 5rem;
 
   @include breakpoint(mobile) {
@@ -31,10 +31,15 @@
   }
 }
 
+.about-intro__video {
+  @include blockContent;
+}
+
 .about-intro__image-wrapper {
   grid-column: 1 / -1;
   position: relative;
   overflow: hidden;
+
   &::before {
     content: "";
     display: block;

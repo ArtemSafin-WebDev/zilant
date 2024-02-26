@@ -7,6 +7,20 @@
   }
 }
 
+.production-video {
+  @include blockWrapper;
+  background-color: #000;
+  padding-top: 6rem;
+  grid-column: 1 / -1;
+  @include breakpoint(mobile) {
+    padding-top: 2rem;
+  }
+}
+
+.production-video-inner {
+  @include blockContent;
+}
+
 .production__content {
   @include blockContent;
   display: flex;
@@ -85,6 +99,7 @@
   position: relative;
   grid-column: 1 / -1;
   overflow: hidden;
+
   &::before {
     content: "";
     display: block;
