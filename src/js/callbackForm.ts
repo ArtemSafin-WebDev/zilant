@@ -19,6 +19,12 @@ export default function callbackForm() {
       ".callback__form-error-btn"
     );
 
+    const submitBtn = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]'
+    );
+
+    let sending = false;
+
     const setSuccess = () => {
       content?.classList.add("hidden");
       success?.classList.add("active");
@@ -45,8 +51,10 @@ export default function callbackForm() {
       if (!formValidator || !form) return;
       formValidator.validate();
 
-      if (formValidator.valid) {
+      if (formValidator.valid && !sending) {
         const formData = new FormData(form);
+        sending = true;
+        if (submitBtn) submitBtn.disabled = true;
 
         axios
           .post(form.action, formData, {
@@ -65,6 +73,10 @@ export default function callbackForm() {
           .catch((err) => {
             console.error(err);
             setError();
+          })
+          .finally(() => {
+            sending = false;
+            if (submitBtn) submitBtn.disabled = false;
           });
       }
     };

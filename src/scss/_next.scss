@@ -139,6 +139,12 @@
     display: block;
     padding-bottom: 54%;
   }
+
+  &--compact {
+    &::before {
+      padding-bottom: 35%;
+    }
+  }
 }
 
 .next__image {

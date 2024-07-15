@@ -33,6 +33,10 @@ body {
   font-family: var(--onest);
   overscroll-behavior: none;
   overflow-anchor: none;
+
+  &.golos-font {
+    font-family: var(--golos);
+  }
 }
 
 body.menu-open,

@@ -21,10 +21,37 @@ export default function quizForm() {
       ".quiz__form-error-btn"
     );
 
+    const modalClose = form.querySelector<HTMLButtonElement>(
+      ".quiz__form-success-popup-close"
+    );
+
+    const radios = Array.from(
+      form.querySelectorAll<HTMLInputElement>(
+        'input[type="radio"][required=""]'
+      )
+    );
+
+    const validateRadios = () => {
+      const radiosChecked = radios.find((radio) => radio.checked);
+      return !!radiosChecked;
+    };
+
+    const submitBtn = form.querySelector<HTMLButtonElement>(
+      'button[type="submit"]'
+    );
+
+    let sending = false;
+
     const setSuccess = () => {
-      content?.classList.add("hidden");
-      success?.classList.add("active");
-      error?.classList.remove("active");
+      // content?.classList.add("hidden");
+      // success?.classList.add("active");
+      // error?.classList.remove("active");
+
+      const modal = document.querySelector<HTMLElement>(
+        ".quiz__form-success-popup"
+      );
+      modal?.classList.add("active");
+      document.body.classList.add("modal-open");
       ScrollTrigger.refresh();
     };
     const setError = () => {
@@ -47,8 +74,19 @@ export default function quizForm() {
       if (!formValidator || !form) return;
       formValidator.validate();
 
-      if (formValidator.valid) {
+      const radiosValid = validateRadios();
+
+      if (!radiosValid) {
+        form.classList.add("radios-not-valid");
+      } else {
+        form.classList.remove("radios-not-valid");
+      }
+
+      if (formValidator.valid && !sending) {
         const formData = new FormData(form);
+
+        sending = true;
+        if (submitBtn) submitBtn.disabled = true;
 
         axios
           .post(form.action, formData, {
@@ -67,14 +105,39 @@ export default function quizForm() {
           .catch((err) => {
             console.error(err);
             setError();
+          })
+          .finally(() => {
+            sending = false;
+            if (submitBtn) submitBtn.disabled = false;
           });
       }
     };
+
+    radios.forEach((radio) =>
+      radio.addEventListener("change", () => {
+        const radiosValid = validateRadios();
+
+        if (!radiosValid) {
+          form.classList.add("radios-not-valid");
+        } else {
+          form.classList.remove("radios-not-valid");
+        }
+      })
+    );
     form.addEventListener("submit", handleFormSubmit);
 
     resetBtn?.addEventListener("click", (event) => {
       event.preventDefault();
       setDefault();
+    });
+
+    modalClose?.addEventListener("click", (event) => {
+      event.preventDefault();
+      const modal = document.querySelector<HTMLElement>(
+        ".quiz__form-success-popup"
+      );
+      modal?.classList.remove("active");
+      document.body.classList.remove("modal-open");
     });
   });
 }

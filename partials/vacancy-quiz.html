@@ -90,13 +90,16 @@
                                                 <use xlink:href="#arrow-down"></use>
                                             </svg>
                                         </div>
+                                        <div class="quiz__form-radio-validation-error">
+                                            Обязательное поле
+                                        </div>
                                         <div class="quiz__form-block-specialization-content js-accordion-content">
                                             <div class="quiz__form-block-specialization-content-inner">
                                                 <div class="quiz__form-block-specialization-checkboxes">
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Продюсер проектов">
+                                                            value="Продюсер проектов" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -107,7 +110,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Режиссёр">
+                                                            value="Режиссёр" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -118,7 +121,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Видеооператор">
+                                                            value="Видеооператор" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -129,7 +132,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Сценарист / Креативщик">
+                                                            value="Сценарист / Креативщик" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -140,7 +143,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Дизайнер">
+                                                            value="Дизайнер" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -151,7 +154,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Актёр / Актриса">
+                                                            value="Актёр / Актриса" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -162,7 +165,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Гафер / Осветитель">
+                                                            value="Гафер / Осветитель" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -173,7 +176,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Аренда кино-видео оборудования">
+                                                            value="Аренда кино-видео оборудования" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -184,7 +187,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Оператор квадракоптера">
+                                                            value="Оператор квадракоптера" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -195,7 +198,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Видеомонтажёр">
+                                                            value="Видеомонтажёр" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -206,7 +209,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Montion-дизайнер">
+                                                            value="Montion-дизайнер" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -217,7 +220,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Cпецалист VFX">
+                                                            value="Cпецалист VFX" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -228,7 +231,7 @@
                                                     <label class="quiz__form-block-specialization-checkbox">
                                                         <input type="radio" name="specialization"
                                                             class="quiz__form-block-specialization-checkbox-input"
-                                                            value="Sound-дизайнер">
+                                                            value="Sound-дизайнер" required="">
                                                         <span class="quiz__form-block-specialization-checkbox-mark">
 
                                                         </span>
@@ -311,6 +314,32 @@
                 <button class="quiz__form-error-btn" type="button">
                     Попробовать снова
                 </button>
+            </div>
+            <div class="quiz__form-success-popup">
+                <button class="quiz__form-success-popup-close">
+                    <svg width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#close"></use>
+                    </svg>
+                </button>
+                <div class="quiz__form-success-popup-inner">
+                    <div class="quiz__form-success-popup-iframe-wrapper">
+                        <img src="/images/youtube-preview.webp" alt="">
+                    </div>
+                    <div class="quiz__form-success-popup-content">
+                        <h3 class="quiz__form-success-popup-heading">
+                            Отлично!
+                        </h3>
+                        <div class="quiz__form-success-popup-text">
+                            Теперь посмотри видео и получи подарок от основателя Zilant.pro
+                        </div>
+                        <a href="#" class="quiz__form-success-popup-link">
+                            <svg width="14" height="14" aria-hidden="true">
+                                <use xlink:href="#gift"></use>
+                            </svg>
+                            Забрать подарок
+                        </a>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

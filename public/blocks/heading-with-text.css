@@ -22,9 +22,17 @@
   grid-column: 1 / 5;
   font-style: normal;
   font-weight: 400;
-  font-size: calc(2.8rem * var(--scale-factor, 1));
+  font-style: normal;
+  font-weight: 400;
+  font-size: calc(3.5rem * var(--scale-factor, 1));
   line-height: 120%;
   letter-spacing: -0.02em;
+}
+
+.heading-with-text__image {
+  grid-column: 1 / 5;
+  width: 100%;
+  height: auto;
 }
 
 .heading-with-text__text-content {
@@ -32,7 +40,7 @@
 
   font-style: normal;
   font-weight: 400;
-  font-size: calc(2.8rem * var(--scale-factor, 1));
+  font-size: calc(3.5rem * var(--scale-factor, 1));
   line-height: 130%;
   letter-spacing: -0.02em;
 }
@@ -65,7 +73,7 @@
   display: block;
   position: absolute;
   left: calc(1.4rem * var(--scale-factor, 1));
-  top: 0.6em;
+  top: 0.7em;
   transform: translateY(-50%);
   width: 8px;
   height: 8px;
